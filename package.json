@@ -1,0 +1,36 @@
+{
+  "name": "preloader",
+  "version": "1.0.0",
+  "description": "A library for loading common web assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Jam3/preloader.git"
+  },
+  "keywords": [
+    "preload",
+    "load",
+    "json",
+    "image",
+    "binary",
+    "laoder",
+    "preloader"
+  ],
+  "author": {
+    "name": "Mikko Haapoja",
+    "email": "me@mikkoh.com",
+    "url": "https://github.com/mikkoh"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jam3/preloader/issues"
+  },
+  "homepage": "https://github.com/Jam3/preloader",
+  "dependencies": {
+    "js-oop": "^1.0.0",
+    "signals": "^1.0.0"
+  }
+}
