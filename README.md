@@ -32,7 +32,11 @@ loader.on('complete',function() {
   console.log('all content loaded!');
 });
 loader.add('video1.mp4');
-loader.add('test_image.jpg');
+loader.add('test_image.jpg',{
+  onComplete: {
+    document.body.appendChild(loader.get('test_image.jpg'));
+  }
+});
 loader.add('site_data.json');
 loader.load();
 ```
