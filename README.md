@@ -10,7 +10,7 @@ A library for loading common web assets
 
 # preloader
 
-The preloader is capabable of loading almost all types of files, if it does not understand a file type, it will attempt to load it as a basic xhr request. IT extends the [nodejs event emitter](https://nodejs.org/api/events.html) and uses the following events.
+The preloader is capable of loading almost all types of files, if it does not understand a file type, it will attempt to load it as a basic xhr request. IT extends the [nodejs event emitter](https://nodejs.org/api/events.html) and uses the following events.
 
 ```progress```: `Event` Sends updates on loading progress to other part of application (loading ui)  
 ```complete```: `Event` Notifies loading completion to other part of application
@@ -56,42 +56,42 @@ This creates a new instance of the preloader on which on you use the following a
 Generic asset loader function - determines loader to be used based on file-extension
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addImage(url ,options) 
 
 Load image - uses the LoaderImage loader
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addJSON(url, options) 
 
 Load JSON - uses the LoaderJSON loader
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addText(url, options) 
 
 Load text - uses the LoaderText loader
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addVideo(url, options) 
 
 Load video - uses the LoaderVideo loader
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addImage(url, options) 
 
 Load image - uses the LoaderImage loader
 
 ```url```: `String` URL of asset  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### addFromLoaderType(url, loaderType, options) 
 
@@ -99,14 +99,14 @@ Load asset using custom loader
 
 ```url```: `String` URL of asset  
 ```loaderType```: `function` Custom loader function  
-```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this particular item.  
 
 ### setPercentage(url, percentageOfLoad) 
 
 Sets percentage of total load for a given asset
 
 ```url```: `String` URL of asset  
-```percentageOfLoad```: `Number` Number <= 1 representing percentage of total load  
+```percentageOfLoad```: `Number`  representing percentage of total load  
 
 ### load() 
 
