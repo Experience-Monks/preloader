@@ -15,7 +15,29 @@ The preloader is capabable of loading almost all types of files, if it does not 
 ```progress```: `Event` Sends updates on loading progress to other part of application (loading ui)  
 ```complete```: `Event` Notifies loading completion to other part of application
 
-### new Preloader(options) or preloader(options)
+Here is a common usage of the preloader.
+
+```js
+var preloader = require('preloader');
+var loader = preloader({
+  xhrImages: false,
+  loadFullAudio: false,
+  loadFullVideo: false
+});
+loader.on('progress',function(progress) {
+  console.log(progress);
+});
+loader.on('complete',function() {
+  var data = loader.getContent('site_data.json');
+  console.log('all content loaded!');
+});
+loader.add('video1.mp4');
+loader.add('test_image.jpg');
+loader.add('site_data.json');
+loader.load();
+```
+
+### new Preloader(options) / preloader(options)
 
 This creates a new instance of the preloader on which on you use the following api. It is not a singleton and must be instantiated to use. The options object contains the following properties.
 
