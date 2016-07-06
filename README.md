@@ -33,7 +33,7 @@ loader.on('complete',function() {
 });
 loader.add('video1.mp4');
 loader.add('test_image.jpg',{
-  onComplete: {
+  onComplete: function(content) {
     document.body.appendChild(loader.get('test_image.jpg'));
   }
 });

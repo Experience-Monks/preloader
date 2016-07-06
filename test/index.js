@@ -12,13 +12,13 @@ loader.on('complete',function() {
   console.log('all content loaded:',data.success);
 });
 loader.add('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',{
-  onComplete: function() {
+  onComplete: function(content) {
     document.body.appendChild(loader.get('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'))
   }
 });
 loader.add('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg',{
-  onComplete: function() {
-    document.body.appendChild(loader.get('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg'))
+  onComplete: function(content) {
+    document.body.appendChild(content);
   }
 });
 loader.add('test_data.json');
