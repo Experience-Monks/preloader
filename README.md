@@ -28,7 +28,7 @@ loader.on('progress',function(progress) {
   console.log(progress);
 });
 loader.on('complete',function() {
-  var data = loader.getContent('site_data.json');
+  var data = loader.get('site_data.json');
   console.log('all content loaded!');
 });
 loader.add('video1.mp4');
@@ -112,7 +112,7 @@ Begins loading process
 
 Stops loading process
 
-### getContent(url) 
+### get(url) 
 
 Retrieves loaded asset from loader
 
