@@ -20,10 +20,15 @@
     "preloader"
   ],
   "author": {
+    "name": "Nick Poisson",
+    "email": "nick@jam3.com",
+    "url": "https://github.com/njam3"
+  },
+  "contributors": [{
     "name": "Mikko Haapoja",
     "email": "me@mikkoh.com",
     "url": "https://github.com/mikkoh"
-  },
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jam3/preloader/issues"
