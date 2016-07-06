@@ -10,123 +10,92 @@ A library for loading common web assets
 
 # preloader
 
-This module will contain everything related to preloading.
+The preloader is capabable of loading almost all types of files, if it does not understand a file type, it will attempt to load it as a basic xhr request. IT extends the [nodejs event emitter](https://nodejs.org/api/events.html) and uses the following events.
 
-## Class: Preloader
-This module will contain everything related to preloading. It includes [signals](https://www.npmjs.com/package/signals) for its events system.
+```progress```: `Event` Sends updates on loading progress to other part of application (loading ui)  
+```complete```: `Event` Notifies loading completion to other part of application
 
-**onProgress**: `Signal` Sends updates on loading progress to other part of application (loading ui)  
-**onComplete**: `Signal` Notifies loading completion to other part of application
+### new Preloader(options) or preloader(options)
 
-### add(url, modifiers, modifierFunction) 
+This creates a new instance of the preloader on which on you use the following api. It is not a singleton and must be instantiated to use. The options object contains the following properties.
+
+```xhrImages``` Loads images via XHR and converts to a Blob instead of the image tag, default: false  
+```loadFullAudio``` Specifies is audio should be loaded in full instead of just to the point where they can play, default: false  
+```loadFillVideo``` Specifies is video should be loaded in full instead of just to the point where they can play, default: false  
+```onComplete``` A function to attach to the complete event  
+```onProgress``` A function to attach to the progress event  
+
+### add(url, options) 
 
 Generic asset loader function - determines loader to be used based on file-extension
 
-**Parameters**
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
-**url**: `String` Base URL of asset
-
-**modifiers**: `Array` list of image pixel-densities to be made available
-
-**modifierFunction**: `function` optional string manipulation util to format url based on modifiers argument (i.e. if strings, ['@1','@2'])
-
-
-### addImage(url, modifiers, modifierFunction) 
+### addImage(url ,options) 
 
 Load image - uses the LoaderImage loader
 
-**Parameters**
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
-**url**: `String` Base URL of asset
-
-**modifiers**: `Array` list of image pixel-densities to be made available
-
-**modifierFunction**: `function` string manipulation util to format url based on modifiers argument (i.e. if strings, ['@1','@2'])
-
-
-### addJSON(url, modifiers, modifierFunction) 
+### addJSON(url, options) 
 
 Load JSON - uses the LoaderJSON loader
 
-**Parameters**
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
-**url**: `String` Base URL of asset
+### addText(url, options) 
 
-**modifiers**: `Array` list of image pixel-densities to be made available
+Load text - uses the LoaderText loader
 
-**modifierFunction**: `function` string manipulation util to format url based on modifiers argument (i.e. if strings, ['@1','@2'])
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
+### addVideo(url, options) 
 
-### addText(url, modifiers, modifierFunction) 
+Load video - uses the LoaderVideo loader
 
-Load text- uses the LoaderText loader
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
-**Parameters**
+### addImage(url, options) 
 
-**url**: `String` Base URL of asset
+Load image - uses the LoaderImage loader
 
-**modifiers**: `Array` list of image pixel-densities to be made available
+```url```: `String` URL of asset  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
-**modifierFunction**: `function` string manipulation util to format url based on modifiers argument (i.e. if strings, ['@1','@2'])
-
-
-### addFromLoaderType(url, loaderType, modifiers, modifierFunction) 
+### addFromLoaderType(url, loaderType, options) 
 
 Load asset using custom loader
 
-**Parameters**
-
-**url**: `String` Base URL of asset
-
-**loaderType**: `function` Custom loader function
-
-**modifiers**: `Array` list of image pixel-densities to be made available
-
-**modifierFunction**: `function` string manipulation util to format url based on modifiers argument (i.e. if strings, ['@1','@2'])
-
-
-### setCacheID(url, cacheID) 
-
-Sets ID for asset in the cache for future retrieval
-
-**Parameters**
-
-**url**: `String` Base URL of asset
-
-**cacheID**: `String` New identifier of asset to be used in cache
-
+```url```: `String` URL of asset  
+```loaderType```: `function` Custom loader function  
+```options```: `Object` Custom options to override the global options created at instantiation, can also pass in `onComplete` and `onProgress` to listen to the events on this peticular item.  
 
 ### setPercentage(url, percentageOfLoad) 
 
 Sets percentage of total load for a given asset
 
-**Parameters**
-
-**url**: `String` Base URL of asset
-
-**percentageOfLoad**: `Number` Number <= 1 representing percentage of total load
-
+```url```: `String` URL of asset  
+```percentageOfLoad```: `Number` Number <= 1 representing percentage of total load  
 
 ### load() 
 
 Begins loading process
 
-
 ### stopLoad() 
 
 Stops loading process
-
 
 ### getContent(url) 
 
 Retrieves loaded asset from loader
 
-**Parameters**
-
-**url**: `String` Base URL of asset
-
-**Returns**: , asset instance
-
+```url```: `String` URL of asset  
+```Returns```: asset instance  
 
 ## License
 
