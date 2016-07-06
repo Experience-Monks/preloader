@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/Jam3/preloader",
   "dependencies": {
-    "js-oop": "^1.0.0",
-    "signals": "^1.0.0"
+    "js-oop": "^1.0.0"
   }
 }

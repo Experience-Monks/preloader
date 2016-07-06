@@ -1,1 +1,1 @@
-module.exports = require('./lib/Preloader');
+module.exports = require('./lib/index');
