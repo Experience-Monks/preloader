@@ -37,7 +37,10 @@
   },
   "homepage": "https://github.com/Jam3/preloader",
   "dependencies": {
+    "base64mime": "0.0.3",
     "js-oop": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "budo": "9.2.1"
+  }
 }
