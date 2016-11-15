@@ -4,7 +4,8 @@
   "description": "A library for loading common web assets",
   "main": "index.js",
   "scripts": {
-    "test": "budo test/ --open --dir test/"
+    "test": "npm run lint && budo test/ --open --dir test/",
+    "lint": "semistandard --fix"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,11 @@
   },
   "homepage": "https://github.com/Jam3/preloader",
   "dependencies": {
+    "base64mime": "0.0.3",
     "js-oop": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "budo": "9.2.1",
+    "semistandard": "9.1.0"
+  }
 }
