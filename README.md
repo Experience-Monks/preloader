@@ -123,6 +123,10 @@ Retrieves loaded asset from loader
 ```url```: `String` URL of asset  
 ```Returns```: asset instance  
 
+### reset()
+
+Resets loading so you can reuse the preloader. does not remove cached loads so `get()` continues to function for all assets.
+
 ## License
 
 MIT, see [LICENSE.md](https://github.com/Jam3/preloader/blob/master/LICENSE.md) for details.
