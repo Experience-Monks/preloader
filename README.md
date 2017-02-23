@@ -49,7 +49,8 @@ This creates a new instance of the preloader on which on you use the following a
 ```loadFullAudio``` Specifies is audio should be loaded in full instead of just to the point where they can play, default: false  
 ```loadFillVideo``` Specifies is video should be loaded in full instead of just to the point where they can play, default: false  
 ```onComplete``` A function to attach to the complete event  
-```onProgress``` A function to attach to the progress event  
+```onProgress``` A function to attach to the progress event
+```throttle``` A integer specifying maximum amount of connections at a time, 0 = infinite
 
 ### add(url, options) 
 
