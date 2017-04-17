@@ -11,9 +11,11 @@ loader.on('complete', function () {
   var data = loader.get('test_data.json');
   console.log('all content loaded:', data.success);
 });
-loader.add('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', {
+loader.add('big_buck_bunny.mp4', {
   onComplete: function (content) {
-    document.body.appendChild(loader.get('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'));
+    var video = loader.get('big_buck_bunny.mp4');
+    video.setAttribute('controls', true);
+    document.body.appendChild(video);
   }
 });
 loader.add('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg', {
