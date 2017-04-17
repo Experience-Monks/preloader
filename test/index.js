@@ -13,11 +13,8 @@ loader.on('complete', function () {
 });
 loader.add('big_buck_bunny.mp4', {
   onComplete: function (content) {
-    var BlobURL = loader.get('big_buck_bunny.mp4');
-    var video = document.createElement('video');
+    var video = loader.get('big_buck_bunny.mp4');
     video.setAttribute('controls', true);
-    video.style.display = 'block';
-    video.src = BlobURL;
     document.body.appendChild(video);
   }
 });
